@@ -122,10 +122,15 @@ It seems there will be more rabbits soon!"""
 animals = [camel, lion, deer, goose, bat, rabbit]
 
 # write your code here
-print("Enter \"exit\" to leave")
-habitat_num = input("Which habitat do you need? > ")
+habitat_num = ""
 while habitat_num != "exit":
-    print(animals[int(habitat_num)])
     print("Enter \"exit\" to leave")
     habitat_num = input("Which habitat do you need? > ")
+    if int(habitat_num) < 0 or int(habitat_num) >= len(animals):
+        print("Habitat number is invalid, input an integer from 0 to " + str(len(animals) - 1))
+        continue
+    input_type = type(habitat_num)
+    print(animals[int(habitat_num)])
+    # print(type(habitat_num))
+
 
